@@ -81,6 +81,7 @@ class Queue {
 class Node
 {
 	public boolean wasVisited;
+	public int distance;
 	public Node()
 	{
 		wasVisited = false;
@@ -115,7 +116,12 @@ class Graph
 		adjMat[start][end] = 1;
 		adjMat[end][start] = 1;
 	}
-	//
+	//delete connection
+	public void deleteEdge(int start, int end)
+	{
+		adjMat[start][end]=0;
+		adjMat[end][start] = 0;
+	}
 	
 	
 }
